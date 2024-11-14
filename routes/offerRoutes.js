@@ -258,7 +258,7 @@ router.delete(
         await cloudinary.uploader.destroy(
           offerToDelete.product_image.public_id
         );
-        console.log("Picture deleted.");
+        console.log("Picture deleted");
       }
 
       res
