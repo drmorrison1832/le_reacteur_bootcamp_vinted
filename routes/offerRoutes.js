@@ -151,11 +151,8 @@ router.post(
           id: req.user.id,
         },
         product_image: {
-          // ...
-          // informations sur l'image du produit
-          secure_url:
-            "https://res.cloudinary.com/lereacteur-apollo/image/upload/v1602856743/api/vinted/offers/5f89a72435e128e99550837e/preview.jpg",
-          // ...
+          url: uploadResult.url,
+          public_id: uploadResult.public_id,
         },
       };
 
