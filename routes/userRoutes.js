@@ -66,14 +66,15 @@ router.post(
           public_id: `vinted/users/${newUser.id}`,
           asset_folder: "vinted_backend/users",
         });
-        console.log(uploadResult);
+        console.log("uploadResult is ", uploadResult);
         newUser.account.avatar = {
           url: uploadResult.url,
           public_id: uploadResult.public_id,
         };
+      } else {
+        uploadResult.url = "No avatar";
+        console.error("Avatar not saved.");
       }
-      uploadResult.url = "No avatar";
-      console.error("Avatar not saved.");
 
       newUser.save();
 
